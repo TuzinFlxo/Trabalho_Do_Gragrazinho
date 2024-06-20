@@ -7,6 +7,7 @@ import { ThemedView } from "@/components/ThemedView";
 
 export default function HomeScreen() {
   return (
+    
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
       headerImage={
@@ -14,32 +15,35 @@ export default function HomeScreen() {
           source={require("@/assets/images/logo.jpg")}
           style={styles.reactLogo}
         />
+        
       }
     >
-      <ThemedView style={styles.tituloContainer}>
-        <ThemedText type="title">Bem vindo as Terras Intermédias!</ThemedText>
+
+      
+
+      <ThemedView style={styles.tituloContainer} >
+        <ThemedText type="title">Seja bem recebido ao Santuário</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.tituloContainer}>
-        <ThemedText type="subtitle">Sobre o app:</ThemedText>
+        <ThemedText type="subtitle">Sobre o aplicativo:</ThemedText>
       </ThemedView>
       <ThemedView style={styles.textoContainer}>
         <ThemedText>
           <ThemedText type="defaultSemiBold">
-            MikotoPlace's oferece a solução perfeita para centralizar o gerenciamento de suas redes sociais.
-            Conecte-se e sincronize suas contas de várias plataformas, como Facebook, Twitter, Instagram, LinkedIn e outras,
-            simplificando a interação e visualização de suas redes em um só lugar.
-            Simplifique sua presença online com MikotoPlace's.
+            Neste aplicativo você poderá ver todas as suas redes sociais mais importantes.
+            Aqui vc poderá administra-las e ter uma melhor visualização das suas opções.
+            Trazendo assim mais simplicidade e praticidade no seu dia a dia.
           </ThemedText>
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.tituloContainer}>
-        <ThemedText type="subtitle">Sobre mim:</ThemedText>
+        <ThemedText type="subtitle">Criador:</ThemedText>
       </ThemedView>
       <ThemedView style={styles.textoContainer}>
         <ThemedText>
-          Olá! Eu sou Luis Rosário e estou desenvolvendo uma nova plataforma de Redes Sociais.
-          Junte-se a nós para uma experiência online mais conectada e significativa!
+        Ola, tudo bem? Meu nome é Matheus Pontes Lé e este é meu projeto para à administração e
+        melhor visualização de suas redes sociais.
         </ThemedText>
       </ThemedView> 
     </ParallaxScrollView>

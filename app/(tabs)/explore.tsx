@@ -1,4 +1,4 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
+import React from 'react';
 import { StyleSheet, Image, View, Pressable, Linking } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
@@ -17,59 +17,52 @@ export default function TabTwoScreen() {
       </ThemedView>
 
       <ThemedView style={styles.contentContainer}>
-        <ThemedView style={styles.redes}>
-          <Image source={require('@/assets/images/1.png')} style={styles.icon} />
-          <Pressable  onPress={() => Linking.openURL('https://wa.me/qr/5D2XL6JUTF74P1')}>
-            <ThemedText>Whatsapp</ThemedText>
-          </Pressable>
-        </ThemedView>
-
-        <ThemedView style={styles.redes}>
-          <Image source={require('@/assets/images/2.png')} style={styles.icon} />
-          <Pressable  onPress={() => Linking.openURL('https://www.instagram.com/flpnzx_/')}>
-            <ThemedText>Instagram</ThemedText>
-          </Pressable>
-        </ThemedView>
-
-        <ThemedView style={styles.redes}>
-          <Image source={require('@/assets/images/3.png')} style={styles.icon} />
-          <Pressable  onPress={() => Linking.openURL('https://github.com/Felipe14177')}>
-            <ThemedText>Github</ThemedText>
-          </Pressable>
-        </ThemedView>
-
-        <ThemedView style={styles.redes}>
-          <Image source={require('@/assets/images/0.png')} style={styles.icon} />
-          <Pressable onPress={() => Linking.openURL('tel:5518998244362')}>
-            <ThemedText>Telefone</ThemedText>
-          </Pressable>
-        </ThemedView>
-
-        <ThemedView style={styles.redes}>
-          <Image source={require('@/assets/images/5.png')} style={styles.icon} />
-          <Pressable  onPress={() => Linking.openURL('https://discord.com/channels/@me/1057518184003014697')}>
-            <ThemedText>Discord</ThemedText>
-          </Pressable>
-        </ThemedView>
-
-        <ThemedView style={styles.redes}>
-          <Image source={require('@/assets/images/6.png')} style={styles.icon} />
-          <Pressable  onPress={() => Linking.openURL('https://www.linkedin.com/in/felipe-stebam-7b8980314/')}>
-            <ThemedText>Linkedin</ThemedText>
-          </Pressable>
-        </ThemedView>
-
-        <ThemedView style={styles.redes}>
-          <Image source={require('@/assets/images/4.png')} style={styles.icon} />
-          <Pressable  onPress={() => Linking.openURL('https://x.com/StebamFelipe')}>
-            <ThemedText>Twiter</ThemedText>
-          </Pressable>
-        </ThemedView>
-
+        <SocialButton
+          icon={require('@/assets/images/1.png')}
+          onPress={() => Linking.openURL(' https://wa.me/(55)18998203847')}
+          text="Whatsapp"
+        />
+        <SocialButton
+          icon={require('@/assets/images/2.png')}
+          onPress={() => Linking.openURL('https://www.instagram.com/matheuspontes_le/?next=%2F')}
+          text="Instagram"
+        />
+        <SocialButton
+          icon={require('@/assets/images/3.png')}
+          onPress={() => Linking.openURL('https://github.com/TuzinFlxo')}
+          text="Github"
+        />
+        <SocialButton
+          icon={require('@/assets/images/0.png')}
+          onPress={() => Linking.openURL('tel:5518998203847')}
+          text="Telefone"
+        />
+        <SocialButton
+          icon={require('@/assets/images/5.png')}
+          onPress={() => Linking.openURL('https://discord.com/channels/@me')}
+          text="Discord"
+        />
+        <SocialButton
+          icon={require('@/assets/images/6.png')}
+          onPress={() => Linking.openURL('https://www.linkedin.com/in/matheus-pontes-bb1032315/')}
+          text="Linkedin"
+        />
+        <SocialButton
+          icon={require('@/assets/images/4.png')}
+          onPress={() => Linking.openURL('https://x.com/LayserBot?t=32YuL691_3tXrlz8nkvdDA&s=09')}
+          text="Twiter"
+        />
       </ThemedView>
     </ParallaxScrollView>
   );
 }
+
+const SocialButton = ({ icon, onPress, text }) => (
+  <Pressable style={styles.button} onPress={onPress}>
+    <Image source={icon} style={styles.icon} />
+    <ThemedText style={styles.buttonText}>{text}</ThemedText>
+  </Pressable>
+);
 
 const styles = StyleSheet.create({
   headerImage: {
@@ -83,22 +76,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 16,
   },
-  redes: {
+  button: {
     flexDirection: 'row',
-     
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start', // alinha os itens à esquerda
     marginTop: 16,
     backgroundColor: 'white',
-    borderRadius: 100,
-    padding: 10
+    borderRadius: 16, // deixando mais quadradinho
+    padding: 16, // aumentando o padding para aumentar o tamanho
+    width: '100%', // padronizando o tamanho
   },
   icon: {
     width: 40,
     height: 40,
     marginRight: 8,
   },
-  text: {
-    fontSize: 16,
+  buttonText: {
+    flex: 1, // para o texto ocupar o espaço restante
+    textAlign: 'center', // centraliza o texto
+    color: 'black', // cor do texto
   },
 });
+
